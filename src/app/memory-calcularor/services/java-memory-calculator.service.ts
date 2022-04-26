@@ -3,7 +3,7 @@ import { BytesSize } from 'src/app/memory-calcularor/beans/bytes-size';
 import { JavaMemoryCalculatorOptions } from 'src/app/memory-calcularor/beans/java-memory-calculator-options';
 import { JVMMemoryOptions } from 'src/app/memory-calcularor/beans/jvm-memory-options';
 
-const JVM_DEFAULTS = {
+export const JVM_DEFAULTS = {
   maxDirectMemorySize: BytesSize.parse('10M'),
   reservedCodeCacheSize: BytesSize.parse('240M'),
   xss: BytesSize.parse('1M'),

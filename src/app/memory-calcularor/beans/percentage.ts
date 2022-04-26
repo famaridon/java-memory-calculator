@@ -11,4 +11,7 @@ export class Percentage {
         }
     }
 
+    public stringify(): string {
+        return this.value + '%';
+    }
 }
