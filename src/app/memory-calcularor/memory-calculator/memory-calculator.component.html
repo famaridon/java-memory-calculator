@@ -1,0 +1,65 @@
+<div class="border rounded shadow mt-5 py-2 p-4">
+  <h3>Memory Calculator options</h3>
+  <div class="row">
+    <mat-form-field class="vw-100">
+      <mat-label>--total-memory</mat-label>
+      <input matInput [value]="memoryCalculatorOptions.totalMemory.stringify()"/>
+      <mat-hint
+        >total memory available to the application, typically expressed with
+        size classification (B, K, M, G, T)</mat-hint
+      >
+    </mat-form-field>
+    <mat-form-field class="vw-100">
+      <mat-label>--loaded-class-count</mat-label>
+      <input matInput [value]="memoryCalculatorOptions.totalClassCount"/>
+      <mat-hint
+        >the number of classes that will be loaded when the application is
+        running</mat-hint
+      >
+    </mat-form-field>
+    <mat-form-field class="vw-100">
+      <mat-label>--thread-count</mat-label>
+      <input matInput [value]="memoryCalculatorOptions.threadCount"/>
+      <mat-hint>the number of user threads</mat-hint>
+    </mat-form-field>
+    <mat-form-field class="vw-100">
+      <mat-label>--head-room</mat-label>
+      <input matInput [value]="memoryCalculatorOptions.headRoom.stringify()"/>
+      <mat-hint
+        >percentage of total memory available which will be left unallocated to
+        cover JVM overhead</mat-hint
+      >
+    </mat-form-field>
+  </div>
+  <h3 class="mt-3">JVM options</h3>
+  <div class="row">
+    <mat-form-field class="vw-100">
+      <mat-label>-Xss</mat-label>
+      <input matInput [value]="memoryCalculatorOptions.jvmPresetOptions.xss?.stringify()" />
+      <mat-hint>Sets the stack size and increment for Java™ threads. (default 1M)</mat-hint>
+    </mat-form-field>
+    <mat-form-field class="vw-100">
+      <mat-label>-XX:MaxDirectMemorySize</mat-label>
+      <input matInput [value]="memoryCalculatorOptions.jvmPresetOptions.maxDirectMemorySize?.stringify()" />
+      <mat-hint>The amount of direct memory. (default 10M)</mat-hint>
+    </mat-form-field>
+    <mat-form-field class="vw-100">
+      <mat-label>-XX:MaxMetaspaceSize</mat-label>
+      <input matInput  [value]="memoryCalculatorOptions.jvmPresetOptions.maxMetaspaceSize?.stringify()"/>
+      <mat-hint>The amount of metaspace. If not configured then the value is calculated as (5800B * loaded_class_count) + 14000000b</mat-hint>
+    </mat-form-field>
+    <mat-form-field class="vw-100">
+      <mat-label>-XX:ReservedCodeCacheSize</mat-label>
+      <input matInput [value]="memoryCalculatorOptions.jvmPresetOptions.reservedCodeCacheSize?.stringify()"/>
+      <mat-hint>The amount of reserved code cache. (default 240M</mat-hint>
+    </mat-form-field>
+    <mat-form-field class="vw-100">
+        <mat-label>-Xmx</mat-label>
+        <input matInput disabled="true" [value]="memoryCalculatorOptions.jvmPresetOptions.xmx?.stringify()" />
+        <mat-hint>These HotSpot options set the minimum Java heap size, and the maximum heap size.</mat-hint>
+      </mat-form-field>
+  </div>
+  <div>
+      <h3 class="mt-5">{{ javaOpts }}</h3>
+  </div>
+</div>
